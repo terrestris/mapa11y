@@ -57,7 +57,7 @@ const GrayscaleFilter: React.FC<GrayscaleFilterProps> = ({
           />
         </filter>
       </svg>
-      <button onClick={onActivate}>
+      <button onClick={onActivate} title='Graustufen'>
         {isActive ? 'Graustufen aus' : 'Graustufen an'}
       </button>
       {isActive && (

@@ -56,7 +56,7 @@ const TritanomalyFilter: React.FC<TritanomalyFilterProps> = ({
           />
         </filter>
       </svg>
-      <button onClick={onActivate}>
+      <button onClick={onActivate} title='Blausehschwäche'>
         {isActive ? 'Tritanomalie aus' : 'Tritanomalie an'}
       </button>
       {isActive && (

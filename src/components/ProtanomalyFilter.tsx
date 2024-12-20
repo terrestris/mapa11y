@@ -57,7 +57,7 @@ const ProtanomalyFilter: React.FC<ProtanomalyFilterProps> = ({
           />
         </filter>
       </svg>
-      <button onClick={onActivate}>
+      <button onClick={onActivate} title='Rotsehschwäche'>
         {isActive ? 'Protanomalie aus' : 'Protanomalie an'}
       </button>
       {isActive && (

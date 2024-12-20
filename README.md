@@ -1,50 +1,65 @@
-# React + TypeScript + Vite
+# MapA11y
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+MapA11y is a React-based accessibility tool for map applications and general websites that provides various color filters to enhance visualization for people with visual impairments (e.g., Protanomaly, Tritanomaly, Grayscale). The filters are optimized for integration into mapping applications like OpenLayers.
 
-Currently, two official plugins are available:
+## Features - December 2024
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+- **Protanomaly Filter:** Adjusts colors for individuals with Protanomaly (red-green color blindness).
+- **Tritanomaly Filter:** Adjusts colors for individuals with Tritanomaly (blue-yellow color blindness).
+- **Grayscale Filter:** Converts the visualization into grayscale.
 
-## Expanding the ESLint configuration
+## Installation - not available now
 
-If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
+To install the package in your project, use the following command:
 
-- Configure the top-level `parserOptions` property like this:
-
-```js
-export default tseslint.config({
-  languageOptions: {
-    // other options...
-    parserOptions: {
-      project: ['./tsconfig.node.json', './tsconfig.app.json'],
-      tsconfigRootDir: import.meta.dirname,
-    },
-  },
-})
+```bash
+npm install mapa11y
 ```
 
-- Replace `tseslint.configs.recommended` to `tseslint.configs.recommendedTypeChecked` or `tseslint.configs.strictTypeChecked`
-- Optionally add `...tseslint.configs.stylisticTypeChecked`
-- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and update the config:
+## Usage
 
-```js
-// eslint.config.js
-import react from 'eslint-plugin-react'
+### Basic Integration
 
-export default tseslint.config({
-  // Set the react version
-  settings: { react: { version: '18.3' } },
-  plugins: {
-    // Add the react plugin
-    react,
-  },
-  rules: {
-    // other rules...
-    // Enable its recommended rules
-    ...react.configs.recommended.rules,
-    ...react.configs['jsx-runtime'].rules,
-  },
-})
+To integrate the accessibility filters into your React application, import the FilterMenu component.
+
+## Development
+
+### Local Setup
+
+To run the project locally, clone the repository and install dependencies:
+
+```bash
+git clone https://code.terrestris.de/mholthausen/mapa11y.git
+cd mapa11y
+npm install
+npm run dev
 ```
+
+Then open <http://localhost:5173/> in your browser.
+
+### Build
+
+To build the package:
+
+```bash
+npm run build
+```
+
+## Further Details
+
+See also <https://www.ashleysheridan.co.uk/blog/Testing+Colour+Blindness+Effects+Online+with+SVG+Filters> for further details about SVG matrix.
+
+## License
+
+This project is licensed under the BSD 2-Clause [License](LICENSE). See the LICENSE file for details.
+
+### Contributors
+
+- Michael Holthausen (<holthausen@terrestris.de>)  
+  Maintainer and Developer.
+
+### Author
+
+- Developed by terrestris GmbH & Co. KG  
+  Contact: <info@terrestris.de>  
+  Website: <https://www.terrestris.de>

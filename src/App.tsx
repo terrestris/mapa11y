@@ -6,7 +6,8 @@ import './App.css';
 const App = () => {
   return (
     <>
-      <h1>Filter-Demo</h1>
+      <img src='/favicon.svg' alt='MapA11y Logo' height={'100px'}/>
+      <h1>MapA11y - Filter-Demo</h1>
       <div className="filter-tests">
         <FilterMenu />
         <div>
