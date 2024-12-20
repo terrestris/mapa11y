@@ -1,0 +1,31 @@
+.protanomaly-filter {
+  text-align: center;
+}
+
+.protanomaly-filter button {
+  padding: 10px 20px;
+  font-size: 16px;
+  cursor: pointer;
+  border: none;
+  background-color: #007bff;
+  color: white;
+  border-radius: 5px;
+  margin-bottom: 20px;
+}
+
+.protanomaly-filter button:hover {
+  background-color: #0056b3;
+}
+
+.slider-container {
+  margin-top: 10px;
+}
+
+.slider-container input[type='range'] {
+  width: 80%;
+}
+
+.slider-container p {
+  margin: 5px 0;
+  font-size: 14px;
+}

@@ -1,0 +1,49 @@
+{
+  "name": "mapa11y",
+  "private": true,
+  "version": "0.0.1",
+  "author": {
+    "name": "terrestris GmbH & Co. KG",
+    "email": "info@terrestris.de",
+    "url": "https://www.terrestris.de"
+  },
+  "contributors": [
+    {
+      "name": "Michael Holthausen",
+      "email": "holthausen@terrestris.de"
+    }
+  ],
+  "license": "BSD-2-Clause",
+  "main": "dist/mapa11y.umd.js",
+  "module": "dist/mapa11y.es.js",
+  "types": "dist/index.d.ts",
+  "files": [
+    "dist"
+  ],
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "build:types": "tsc --project tsconfig.build.json",
+    "build": "npm run build:types && vite build",
+    "lint": "eslint .",
+    "preview": "vite preview"
+  },
+  "dependencies": {
+    "ol": "^10.3.1",
+    "react": "^18.3.1",
+    "react-dom": "^18.3.1"
+  },
+  "devDependencies": {
+    "@eslint/js": "^9.15.0",
+    "@types/react": "^18.3.12",
+    "@types/react-dom": "^18.3.1",
+    "@vitejs/plugin-react": "^4.3.4",
+    "eslint": "^9.15.0",
+    "eslint-plugin-react-hooks": "^5.0.0",
+    "eslint-plugin-react-refresh": "^0.4.14",
+    "globals": "^15.12.0",
+    "typescript": "~5.6.2",
+    "typescript-eslint": "^8.15.0",
+    "vite": "^6.0.1"
+  }
+}
