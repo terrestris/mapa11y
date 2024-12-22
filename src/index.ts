@@ -1,8 +1,4 @@
-import FilterMenu from './components/FilterMenu';
-import GrayscaleFilter from './components/GrayscaleFilter';
-import ProtanomalyFilter from './components/ProtanomalyFilter';
-import TritanomalyFilter from './components/TritanomalyFilter';
-
-export type { FC } from 'react';
-
-export { ProtanomalyFilter, GrayscaleFilter, FilterMenu, TritanomalyFilter };
+export { default as FilterMenu } from './components/FilterMenu';
+export { default as GrayscaleFilter } from './components/GrayscaleFilter';
+export { default as ProtanomalyFilter } from './components/ProtanomalyFilter';
+export { default as TritanomalyFilter } from './components/TritanomalyFilter';

@@ -3,16 +3,18 @@
     "target": "ES2022",
     "module": "ESNext",
     "lib": ["ES2022", "DOM", "DOM.Iterable"],
-    "declaration": true, // Aktiviert die Erstellung von Typendateien
-    "declarationDir": "./dist", // Legt den Ausgabeordner für Typendateien fest
-    "emitDeclarationOnly": false, // Generiert auch JavaScript-Dateien
-    "outDir": "./dist", // Ausgabeordner für alle Dateien
+    "declaration": true,
+    "declarationDir": "./dist",
+    "emitDeclarationOnly": false,
+    "outDir": "./dist",
     "strict": true,
     "moduleResolution": "node",
     "skipLibCheck": true,
     "jsx": "react-jsx",
     "allowSyntheticDefaultImports": true,
-    "esModuleInterop": true
+    "esModuleInterop": true,
+    "resolveJsonModule": true,
+    "allowJs": true
   },
-  "include": ["src"] // Gibt an, welche Dateien kompiliert werden sollen
+  "include": ["src"]
 }

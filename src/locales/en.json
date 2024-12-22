@@ -2,9 +2,30 @@
   "filterMenu": {
     "title": "Filter Menu",
     "closeFilterMenu": "Close Filter Menu. Press the Escape key to close.",
+    "openMenu": "Open Filter Menu",
+    "openFilterMenu": "Open Filter Menu. Use Alt + 0 to open.",
     "protanomaly": "Protanomaly Filter",
     "grayscale": "Grayscale Filter",
     "tritanomaly": "Tritanomaly Filter",
-    "close": "Close"
+    "close": "Close",
+    "intensity": "intensity"
+  },
+  "grayscale": {
+    "title": "Grayscale",
+    "grayscaleOn": "Grayscale On",
+    "grayscaleOff": "Grayscale Off",
+    "description": "The grayscale filter converts the colors of the displayed content to shades of gray. This can help improve readability for people with color vision deficiencies or ensure that content remains easily distinguishable in black and white. The filter is also useful for checking contrasts independently of color information."
+  },
+  "protanomaly": {
+    "title": "Protanomaly",
+    "protanomalyOn": "Protanomaly On",
+    "protanomalyOff": "Protanomaly Off",
+    "description": "The protanomaly filter adjusts the display of colors so that red tones are more distinguishable for people with red-green color vision deficiency (protanomaly). This filter helps make content more accessible to people with this color vision deficiency."
+  },
+  "tritanomaly": {
+    "title": "Tritanomaly",
+    "tritanomalyOn": "Tritanomaly On",
+    "tritanomalyOff": "Tritanomaly Off",
+    "description": "The tritanomaly filter adjusts the display of colors so that blue tones are more distinguishable for people with blue-yellow color vision deficiency (tritanomaly). This filter helps make content more accessible to people with this color vision deficiency."
   }
 }

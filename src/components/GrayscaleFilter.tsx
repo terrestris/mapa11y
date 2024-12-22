@@ -1,4 +1,6 @@
-import React, { useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
+
+import { useTranslation } from 'react-i18next';
 
 interface GrayscaleFilterProps {
   isActive: boolean;
@@ -9,19 +11,23 @@ const GrayscaleFilter: React.FC<GrayscaleFilterProps> = ({
   isActive,
   onActivate,
 }) => {
+  const { t } = useTranslation();
+  const [intensity, setIntensity] = useState(100);
+
   useEffect(() => {
     const body = document.body;
     const colorMatrix = document.getElementById('grayscaleMatrix');
 
     if (isActive) {
       body.style.filter = 'url(#grayscale)';
-      updateMatrix(100, colorMatrix);
+      updateMatrix(intensity, colorMatrix);
     } else {
       body.style.filter = 'none';
     }
-  }, [isActive]);
+  }, [isActive, intensity]);
 
   const handleSliderChange = (value: number) => {
+    setIntensity(value);
     const colorMatrix = document.getElementById('grayscaleMatrix');
     updateMatrix(value, colorMatrix);
   };
@@ -57,8 +63,13 @@ const GrayscaleFilter: React.FC<GrayscaleFilterProps> = ({
           />
         </filter>
       </svg>
-      <button onClick={onActivate} title="Graustufen">
-        {isActive ? 'Graustufen aus' : 'Graustufen an'}
+      <button
+        onClick={onActivate}
+        title={t('grayscale.title')}
+        aria-label={t('grayscale.title')}
+        aria-description={t('grayscale.description')}
+      >
+        {isActive ? t('grayscale.grayscaleOff') : t('grayscale.grayscaleOn')}
       </button>
       {isActive && (
         <div className="slider-container">
@@ -66,10 +77,12 @@ const GrayscaleFilter: React.FC<GrayscaleFilterProps> = ({
             type="range"
             min="0"
             max="100"
-            defaultValue={100}
+            value={intensity}
             onChange={e => handleSliderChange(Number(e.target.value))}
           />
-          <p>Intensität: 100%</p>
+          <p>
+            {t('filterMenu.intensity')}: {intensity}%
+          </p>
         </div>
       )}
     </>

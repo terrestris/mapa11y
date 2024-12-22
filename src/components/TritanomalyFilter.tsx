@@ -1,4 +1,6 @@
-import React, { useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
+
+import { useTranslation } from 'react-i18next';
 
 interface TritanomalyFilterProps {
   isActive: boolean;
@@ -9,19 +11,23 @@ const TritanomalyFilter: React.FC<TritanomalyFilterProps> = ({
   isActive,
   onActivate,
 }) => {
+  const { t } = useTranslation();
+  const [intensity, setIntensity] = useState(100);
+
   useEffect(() => {
     const body = document.body;
     const colorMatrix = document.getElementById('tritanomalyMatrix');
 
     if (isActive) {
       body.style.filter = 'url(#tritanomaly)';
-      updateMatrix(100, colorMatrix);
+      updateMatrix(intensity, colorMatrix);
     } else {
       body.style.filter = 'none';
     }
-  }, [isActive]);
+  }, [isActive, intensity]);
 
   const handleSliderChange = (value: number) => {
+    setIntensity(value);
     const colorMatrix = document.getElementById('tritanomalyMatrix');
     updateMatrix(value, colorMatrix);
   };
@@ -57,8 +63,15 @@ const TritanomalyFilter: React.FC<TritanomalyFilterProps> = ({
           />
         </filter>
       </svg>
-      <button onClick={onActivate} title="Blausehschwäche">
-        {isActive ? 'Tritanomalie aus' : 'Tritanomalie an'}
+      <button
+        onClick={onActivate}
+        title={t('tritanomaly.title')}
+        aria-label={t('tritanomaly.title')}
+        aria-description={t('tritanomaly.description')}
+      >
+        {isActive
+          ? t('tritanomaly.tritanomalyOff')
+          : t('tritanomaly.tritanomalyOn')}
       </button>
       {isActive && (
         <div className="slider-container">
@@ -66,10 +79,12 @@ const TritanomalyFilter: React.FC<TritanomalyFilterProps> = ({
             type="range"
             min="0"
             max="100"
-            defaultValue={100}
+            value={intensity}
             onChange={e => handleSliderChange(Number(e.target.value))}
           />
-          <p>Intensität: 100%</p>
+          <p>
+            {t('filterMenu.intensity')}: {intensity}%
+          </p>
         </div>
       )}
     </>

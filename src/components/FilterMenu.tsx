@@ -69,7 +69,12 @@ const FilterMenu: React.FC = () => {
         </div>
       ) : (
         <div className="filter-icon" onClick={toggleMenu}>
-          <img src="/favicon.svg" alt="Open Filter Menu" />
+          <img
+            src="/favicon.svg"
+            alt="Open Filter Menu"
+            aria-label={t('filterMenu.openMenu')}
+            aria-description={t('filterMenu.openFilterMenu')}
+          />
         </div>
       )}
     </div>

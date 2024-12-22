@@ -1,4 +1,6 @@
-import { useEffect } from 'react';
+import { useEffect, useState } from 'react';
+
+import { useTranslation } from 'react-i18next';
 
 interface ProtanomalyFilterProps {
   isActive: boolean;
@@ -9,19 +11,23 @@ const ProtanomalyFilter: React.FC<ProtanomalyFilterProps> = ({
   isActive,
   onActivate,
 }) => {
+  const { t } = useTranslation();
+  const [intensity, setIntensity] = useState(100);
+
   useEffect(() => {
     const body = document.body;
     const colorMatrix = document.getElementById('colorMatrix');
 
     if (isActive) {
       body.style.filter = 'url(#protanomaly)';
-      updateMatrix(100, colorMatrix);
+      updateMatrix(intensity, colorMatrix);
     } else {
       body.style.filter = 'none';
     }
-  }, [isActive]);
+  }, [isActive, intensity]);
 
   const handleSliderChange = (value: number) => {
+    setIntensity(value);
     const colorMatrix = document.getElementById('colorMatrix');
     updateMatrix(value, colorMatrix);
   };
@@ -57,8 +63,15 @@ const ProtanomalyFilter: React.FC<ProtanomalyFilterProps> = ({
           />
         </filter>
       </svg>
-      <button onClick={onActivate} title="Rotsehschwäche">
-        {isActive ? 'Protanomalie aus' : 'Protanomalie an'}
+      <button
+        onClick={onActivate}
+        title={t('protanomaly.title')}
+        aria-label={'protanomaly.title'}
+        aria-description={'protanomaly.description'}
+      >
+        {isActive
+          ? t('protanomaly.protanomalyOff')
+          : t('protanomaly.protanomalyOn')}
       </button>
       {isActive && (
         <div className="slider-container">
@@ -66,10 +79,12 @@ const ProtanomalyFilter: React.FC<ProtanomalyFilterProps> = ({
             type="range"
             min="0"
             max="100"
-            defaultValue={100}
+            value={intensity}
             onChange={e => handleSliderChange(Number(e.target.value))}
           />
-          <p>Intensität: 100%</p>
+          <p>
+            {t('filterMenu.intensity')}: {intensity}%
+          </p>
         </div>
       )}
     </>

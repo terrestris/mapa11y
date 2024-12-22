@@ -2,9 +2,30 @@
   "filterMenu": {
     "title": "Filter Menü",
     "closeFilterMenu": "Filter Menü schließen. Sie können auch die Escape-Taste drücken.",
-    "protanomaly": "Protanomaly Filter",
-    "grayscale": "Graustufen Filter",
-    "tritanomaly": "Tritanomaly Filter",
-    "close": "Schließen"
+    "openMenu": "Filter Menü öffnen",
+    "openFilterMenu": "Filter Menü öffnen. Verwenden Sie Alt + 0 zum Öffnen.",
+    "protanomaly": "Protanomaly",
+    "grayscale": "Graustufen",
+    "tritanomaly": "Tritanomaly",
+    "close": "Schließen",
+    "intensity": "Intensität"
+  },
+  "grayscale": {
+    "title": "Graustufen",
+    "grayscaleOn": "Graustufen an",
+    "grayscaleOff": "Graustufen aus",
+    "description": "Der Graustufenfilter wandelt die Farben der dargestellten Inhalte in Grautöne um. Dies kann helfen, die Lesbarkeit für Personen mit Farbsinnstörungen zu verbessern oder sicherzustellen, dass Inhalte auch in Schwarz-Weiß gut unterscheidbar bleiben. Der Filter ist außerdem nützlich, um Kontraste unabhängig von Farbinformationen zu überprüfen."
+  },
+  "protanomaly": {
+    "title": "Protanomalie",
+    "protanomalyOn": "Protanomalie an",
+    "protanomalyOff": "Protanomalie aus",
+    "description": "Der Protanomalie-Filter passt die Darstellung von Farben so an, dass Rottöne für Personen mit einer Rot-Grün-Sehschwäche (Protanomalie) besser unterscheidbar werden. Dieser Filter unterstützt dabei, Inhalte für Menschen mit dieser Farbsinnstörung zugänglicher zu gestalten."
+  },
+  "tritanomaly": {
+    "title": "Tritanomalie",
+    "tritanomalyOn": "Tritanomalie an",
+    "tritanomalyOff": "Tritanomalie aus",
+    "description": "Der Tritanomalie-Filter passt die Darstellung von Farben so an, dass Blautöne für Personen mit einer Blau-Gelb-Sehschwäche (Tritanomalie) besser unterscheidbar werden. Dieser Filter unterstützt dabei, Inhalte für Menschen mit dieser Farbsinnstörung zugänglicher zu gestalten."
   }
 }
