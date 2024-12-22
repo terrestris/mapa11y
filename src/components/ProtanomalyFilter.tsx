@@ -7,7 +7,7 @@ interface ProtanomalyFilterProps {
 
 const ProtanomalyFilter: React.FC<ProtanomalyFilterProps> = ({
   isActive,
-  onActivate
+  onActivate,
 }) => {
   useEffect(() => {
     const body = document.body;
@@ -28,12 +28,12 @@ const ProtanomalyFilter: React.FC<ProtanomalyFilterProps> = ({
 
   const updateMatrix = (percent: number, matrixElement: HTMLElement | null) => {
     const matrix0 = [
-      1, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 1, 0
+      1, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 1, 0,
     ];
 
     const matrix100 = [
       1, 0, 0, 0, 0, 0.4788968, 0.4769109, 0.0441916, 0, 0, 0.5972818,
-      -0.6886921, 1.0914096, 0, 0, 0, 0, 0, 1, 0
+      -0.6886921, 1.0914096, 0, 0, 0, 0, 0, 1, 0,
     ];
 
     const interpolatedMatrix = matrix0.map(
@@ -57,7 +57,7 @@ const ProtanomalyFilter: React.FC<ProtanomalyFilterProps> = ({
           />
         </filter>
       </svg>
-      <button onClick={onActivate} title='Rotsehschwäche'>
+      <button onClick={onActivate} title="Rotsehschwäche">
         {isActive ? 'Protanomalie aus' : 'Protanomalie an'}
       </button>
       {isActive && (

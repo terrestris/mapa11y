@@ -7,7 +7,7 @@ interface GrayscaleFilterProps {
 
 const GrayscaleFilter: React.FC<GrayscaleFilterProps> = ({
   isActive,
-  onActivate
+  onActivate,
 }) => {
   useEffect(() => {
     const body = document.body;
@@ -29,11 +29,11 @@ const GrayscaleFilter: React.FC<GrayscaleFilterProps> = ({
   const updateMatrix = (percent: number, matrixElement: HTMLElement | null) => {
     const baseMatrix = [
       0.3, 0.3, 0.3, 0, 0, 0.3, 0.3, 0.3, 0, 0, 0.3, 0.3, 0.3, 0, 0, 0, 0, 0, 1,
-      0
+      0,
     ];
 
     const identityMatrix = [
-      1, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 1, 0
+      1, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 1, 0,
     ];
 
     const interpolatedMatrix = identityMatrix.map(
@@ -57,7 +57,7 @@ const GrayscaleFilter: React.FC<GrayscaleFilterProps> = ({
           />
         </filter>
       </svg>
-      <button onClick={onActivate} title='Graustufen'>
+      <button onClick={onActivate} title="Graustufen">
         {isActive ? 'Graustufen aus' : 'Graustufen an'}
       </button>
       {isActive && (

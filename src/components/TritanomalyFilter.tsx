@@ -7,7 +7,7 @@ interface TritanomalyFilterProps {
 
 const TritanomalyFilter: React.FC<TritanomalyFilterProps> = ({
   isActive,
-  onActivate
+  onActivate,
 }) => {
   useEffect(() => {
     const body = document.body;
@@ -28,11 +28,12 @@ const TritanomalyFilter: React.FC<TritanomalyFilterProps> = ({
 
   const updateMatrix = (percent: number, matrixElement: HTMLElement | null) => {
     const matrix0 = [
-      1, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 1, 0
+      1, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 1, 0,
     ];
 
     const matrix100 = [
-      1, 0, 0, 0, 0, 0.95, 0.05, 0, 0, 0, 0, 0.4335, 0.5665, 0, 0, 0, 0, 0, 1, 0
+      1, 0, 0, 0, 0, 0.95, 0.05, 0, 0, 0, 0, 0.4335, 0.5665, 0, 0, 0, 0, 0, 1,
+      0,
     ];
 
     const interpolatedMatrix = matrix0.map(
@@ -56,7 +57,7 @@ const TritanomalyFilter: React.FC<TritanomalyFilterProps> = ({
           />
         </filter>
       </svg>
-      <button onClick={onActivate} title='Blausehschwäche'>
+      <button onClick={onActivate} title="Blausehschwäche">
         {isActive ? 'Tritanomalie aus' : 'Tritanomalie an'}
       </button>
       {isActive && (

@@ -1,0 +1,10 @@
+{
+  "filterMenu": {
+    "title": "Filter Menu",
+    "closeFilterMenu": "Close Filter Menu. Press the Escape key to close.",
+    "protanomaly": "Protanomaly Filter",
+    "grayscale": "Grayscale Filter",
+    "tritanomaly": "Tritanomaly Filter",
+    "close": "Close"
+  }
+}

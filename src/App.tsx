@@ -6,7 +6,7 @@ import './App.css';
 const App = () => {
   return (
     <>
-      <img src='/favicon.svg' alt='MapA11y Logo' height={'100px'}/>
+      <img src="/favicon.svg" alt="MapA11y Logo" height={'100px'} />
       <h1>MapA11y - Filter-Demo</h1>
       <div className="filter-tests">
         <FilterMenu />
@@ -21,7 +21,7 @@ const App = () => {
             width: '100px',
             height: '100px',
             backgroundColor: 'green',
-            margin: '20px auto'
+            margin: '20px auto',
           }}
         />
         <div
@@ -29,7 +29,7 @@ const App = () => {
             width: '100px',
             height: '100px',
             backgroundColor: 'red',
-            margin: '20px auto'
+            margin: '20px auto',
           }}
         />
         <div
@@ -37,7 +37,7 @@ const App = () => {
             width: '100px',
             height: '100px',
             backgroundColor: 'blue',
-            margin: '20px auto'
+            margin: '20px auto',
           }}
         />
         <MapComponent />

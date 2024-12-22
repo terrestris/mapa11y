@@ -1,10 +1,11 @@
 import React, { useEffect, useRef } from 'react';
+
 import 'ol/ol.css';
-import Map from 'ol/Map';
-import View from 'ol/View';
 import TileLayer from 'ol/layer/Tile';
-import TileWMS from 'ol/source/TileWMS';
+import Map from 'ol/Map';
 import { fromLonLat } from 'ol/proj';
+import TileWMS from 'ol/source/TileWMS';
+import View from 'ol/View';
 
 const MapComponent: React.FC = () => {
   const mapRef = useRef<HTMLDivElement>(null);
@@ -20,16 +21,16 @@ const MapComponent: React.FC = () => {
               url: 'https://ows.terrestris.de/osm/service?',
               params: {
                 LAYERS: 'OSM-WMS',
-                TILED: true
+                TILED: true,
               },
-              serverType: 'geoserver'
-            })
-          })
+              serverType: 'geoserver',
+            }),
+          }),
         ],
         view: new View({
           center: fromLonLat([7.0982, 50.7374]),
-          zoom: 12
-        })
+          zoom: 12,
+        }),
       });
 
       return () => map.setTarget(undefined);
@@ -39,7 +40,10 @@ const MapComponent: React.FC = () => {
   return (
     <div
       ref={mapRef}
-      style={{ width: '400px', height: '400px' }}
+      style={{
+        width: '400px',
+        height: '400px',
+      }}
     />
   );
 };
