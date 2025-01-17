@@ -3,9 +3,11 @@ import React, { useEffect, useState } from 'react';
 import { useTranslation } from 'react-i18next';
 
 import './FilterMenu.css';
+import DeuteranomalyFilter from './DeuteranomalyFilter';
 import GrayscaleFilter from './GrayscaleFilter';
 import ProtanomalyFilter from './ProtanomalyFilter';
 import TritanomalyFilter from './TritanomalyFilter';
+import BlueLightFilter from './BlueLightFilter';
 
 const FilterMenu: React.FC = () => {
   const { t } = useTranslation();
@@ -57,13 +59,21 @@ const FilterMenu: React.FC = () => {
               isActive={activeFilter === 'protanomaly'}
               onActivate={() => activateFilter('protanomaly')}
             />
-            <GrayscaleFilter
-              isActive={activeFilter === 'grayscale'}
-              onActivate={() => activateFilter('grayscale')}
+            <DeuteranomalyFilter
+              isActive={activeFilter === 'deuteranomaly'}
+              onActivate={() => activateFilter('deuteranomaly')}
             />
             <TritanomalyFilter
               isActive={activeFilter === 'tritanomaly'}
               onActivate={() => activateFilter('tritanomaly')}
+            />
+            <GrayscaleFilter
+              isActive={activeFilter === 'grayscale'}
+              onActivate={() => activateFilter('grayscale')}
+            />
+            <BlueLightFilter
+              isActive={activeFilter === 'bluelight'}
+              onActivate={() => activateFilter('grayscale')}
             />
           </div>
         </div>

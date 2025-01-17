@@ -2,6 +2,7 @@ import { useEffect, useState } from 'react';
 
 import { useTranslation } from 'react-i18next';
 
+import Slider from './Slider';
 interface ProtanomalyFilterProps {
   isActive: boolean;
   onActivate: () => void;
@@ -54,7 +55,7 @@ const ProtanomalyFilter: React.FC<ProtanomalyFilterProps> = ({
 
   return (
     <>
-      <svg style={{ display: 'none' }}>
+      <svg className="hiddenSvg">
         <filter id="protanomaly">
           <feColorMatrix
             id="colorMatrix"
@@ -66,26 +67,20 @@ const ProtanomalyFilter: React.FC<ProtanomalyFilterProps> = ({
       <button
         onClick={onActivate}
         title={t('protanomaly.title')}
-        aria-label={'protanomaly.title'}
-        aria-description={'protanomaly.description'}
+        aria-label={t('protanomaly.title')}
+        aria-description={t('protanomaly.description')}
       >
         {isActive
           ? t('protanomaly.protanomalyOff')
           : t('protanomaly.protanomalyOn')}
       </button>
       {isActive && (
-        <div className="slider-container">
-          <input
-            type="range"
-            min="0"
-            max="100"
-            value={intensity}
-            onChange={e => handleSliderChange(Number(e.target.value))}
-          />
-          <p>
-            {t('filterMenu.intensity')}: {intensity}%
-          </p>
-        </div>
+        <Slider
+          intensity={intensity}
+          onChange={handleSliderChange}
+          aria-label={`${t('protanomaly.title')}`}
+          aria-description={`${t('slider.currentValue')} ${intensity}%`}
+        />
       )}
     </>
   );

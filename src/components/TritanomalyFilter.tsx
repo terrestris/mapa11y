@@ -2,6 +2,8 @@ import React, { useEffect, useState } from 'react';
 
 import { useTranslation } from 'react-i18next';
 
+import Slider from './Slider';
+
 interface TritanomalyFilterProps {
   isActive: boolean;
   onActivate: () => void;
@@ -54,7 +56,7 @@ const TritanomalyFilter: React.FC<TritanomalyFilterProps> = ({
 
   return (
     <>
-      <svg style={{ display: 'none' }}>
+      <svg className="hiddenSvg">
         <filter id="tritanomaly">
           <feColorMatrix
             id="tritanomalyMatrix"
@@ -74,18 +76,12 @@ const TritanomalyFilter: React.FC<TritanomalyFilterProps> = ({
           : t('tritanomaly.tritanomalyOn')}
       </button>
       {isActive && (
-        <div className="slider-container">
-          <input
-            type="range"
-            min="0"
-            max="100"
-            value={intensity}
-            onChange={e => handleSliderChange(Number(e.target.value))}
-          />
-          <p>
-            {t('filterMenu.intensity')}: {intensity}%
-          </p>
-        </div>
+        <Slider
+          intensity={intensity}
+          onChange={handleSliderChange}
+          aria-label={`${t('tritanomaly.title')}`}
+          aria-description={`${t('slider.currentValue')} ${intensity}%`}
+        />
       )}
     </>
   );

@@ -20,12 +20,23 @@
     "title": "Protanomalie",
     "protanomalyOn": "Protanomalie an",
     "protanomalyOff": "Protanomalie aus",
-    "description": "Der Protanomalie-Filter passt die Darstellung von Farben so an, dass Rottöne für Personen mit einer Rot-Grün-Sehschwäche (Protanomalie) besser unterscheidbar werden. Dieser Filter unterstützt dabei, Inhalte für Menschen mit dieser Farbsinnstörung zugänglicher zu gestalten."
+    "description": "Der Protanomalie-Filter passt die Darstellung von Farben so an, dass Rottöne für Personen mit einer Rot-Sehschwäche (Protanomalie) besser unterscheidbar werden. Dieser Filter unterstützt dabei, Inhalte für Menschen mit dieser Farbsinnstörung zugänglicher zu gestalten."
   },
   "tritanomaly": {
     "title": "Tritanomalie",
     "tritanomalyOn": "Tritanomalie an",
     "tritanomalyOff": "Tritanomalie aus",
     "description": "Der Tritanomalie-Filter passt die Darstellung von Farben so an, dass Blautöne für Personen mit einer Blau-Gelb-Sehschwäche (Tritanomalie) besser unterscheidbar werden. Dieser Filter unterstützt dabei, Inhalte für Menschen mit dieser Farbsinnstörung zugänglicher zu gestalten."
+  },
+  "deuteranomaly": {
+    "title": "Deuteranomalie",
+    "deuteranomalyOn": "Deuteranomalie an",
+    "deuteranomalyOff": "Deuteranomalie aus",
+    "description": "Der Deuteranomalie-Filter passt die Darstellung von Farben so an, dass Grüntöne für Personen mit einer Grün-Sehschwäche (Deuteranomalie) besser unterscheidbar werden. Dieser Filter unterstützt dabei, Inhalte für Menschen mit dieser Farbsinnstörung zugänglicher zu gestalten."
+  },
+  "slider": {
+    "title": "Intensität",
+    "description": "Mit dem Schieberegler können Sie die Intensität des aktiven Filters anpassen. Bewegen Sie den Schieberegler nach rechts, um die Intensität zu erhöhen, und nach links, um die Intensität zu verringern.",
+    "currentValue": "Der aktuelle Wert des Schiebereglers beträgt"
   }
 }

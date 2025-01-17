@@ -78,3 +78,10 @@
   width: 30px;
   height: 30px;
 }
+
+.hiddenSvg {
+  position: absolute;
+  width: 0;
+  height: 0;
+  overflow: hidden;
+}
