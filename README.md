@@ -41,7 +41,7 @@ FilterMenu component. -->
 To run the project locally, clone the repository and install dependencies:
 
 ```bash
-git clone https://code.terrestris.de/mholthausen/mapa11y.git
+git clone git@github.com:terrestris/mapa11y.git
 cd mapa11y
 npm install
 npm run dev
