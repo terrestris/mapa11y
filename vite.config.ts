@@ -7,11 +7,11 @@ export default defineConfig({
   build: {
     lib: {
       entry: './src/index.ts',
-      name: 'Mapa11y',
+      name: 'MapA11y',
       fileName: format => `mapa11y.${format}.js`,
     },
     rollupOptions: {
-      external: ['react', 'react-dom'],
+      external: ['react', 'react-dom', 'react-i18next'],
       output: {
         globals: {
           react: 'React',

@@ -39,9 +39,13 @@ const TritanomalyFilter: React.FC<TritanomalyFilterProps> = ({
       1, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 1, 0,
     ];
 
+    /*
+     * Red becomes increasingly yellowish when mixed with blue and green, green
+     * is shifted slightly to blue, blue becomes lighter and shifts towards
+     * yellow or cyan
+     */
     const matrix100 = [
-      1, 0, 0, 0, 0, 0.95, 0.05, 0, 0, 0, 0, 0.4335, 0.5665, 0, 0, 0, 0, 0, 1,
-      0,
+      1, 0, 0, 0, 0, 0.9, 0.05, 0, 0, 0, 0, 0.4, 0.6, 0, 0, 0, 0, 0, 1, 0,
     ];
 
     const interpolatedMatrix = matrix0.map(

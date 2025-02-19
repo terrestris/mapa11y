@@ -3,10 +3,23 @@
   bottom: 20px;
   right: 20px;
   z-index: 1000;
+
+  font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
+  line-height: 1.5;
+  font-weight: 400;
+
+  color-scheme: light dark;
+  color: rgba(255, 255, 255, 0.87);
+  background-color: #242424;
+
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
 }
 
-.filter-menu {
-  background: rgba(255, 255, 255, 0.9);
+.filter-menu-container .filter-menu {
+  background: rgba(255, 255, 255, 1);
   border: 1px solid #ccc;
   border-radius: 8px;
   padding: 10px;
@@ -16,19 +29,19 @@
   position: relative;
 }
 
-.filter-menu .heading {
+.filter-menu-container .filter-menu .heading {
   margin: 0 0 10px;
   font-size: 16px;
   color: #333;
 }
 
-.filter-menu-buttons {
+.filter-menu-container .filter-menu-buttons {
   display: flex;
   flex-direction: column;
   gap: 10px;
 }
 
-.filter-menu button:not(.close-button) {
+.filter-menu-container .filter-menu button:not(.close-button) {
   width: 100%;
   padding: 8px;
   font-size: 14px;
@@ -36,14 +49,25 @@
   color: white;
   border: none;
   border-radius: 4px;
+  font-weight: 500;
+  font-family: inherit;
   cursor: pointer;
+  transition: border-color 0.25s;
 }
 
-.filter-menu button:not(.close-button):hover {
+.filter-menu-container button:hover {
+  border-color: #646cff;
+}
+.filter-menu-container button:focus,
+.filter-menu-container button:focus-visible {
+  outline: 4px auto -webkit-focus-ring-color;
+}
+
+.filter-menu-container .filter-menu button:not(.close-button):hover {
   background-color: #000;
 }
 
-.close-button {
+.filter-menu-container .close-button {
   width: auto;
   position: absolute;
   top: 5px;
@@ -56,25 +80,25 @@
   color: #555;
 }
 
-.close-button:hover {
+.filter-menu-container .close-button:hover {
   color: #000;
 }
 
-.filter-icon {
+.filter-menu-container .filter-icon {
   background: rgba(255, 255, 255, 0.9);
   border: 1px solid #ccc;
   border-radius: 50%;
   padding: 10px;
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-  width: 50px;
-  height: 50px;
+  width: 30px;
+  height: 30px;
   display: flex;
   align-items: center;
   justify-content: center;
   cursor: pointer;
 }
 
-.filter-icon img {
+.filter-menu-container .filter-icon img {
   width: 30px;
   height: 30px;
 }
@@ -84,4 +108,11 @@
   width: 0;
   height: 0;
   overflow: hidden;
+}
+
+@media (prefers-color-scheme: light) {
+  .filter-menu-container {
+    color: #213547;
+    background-color: transparent;
+  }
 }

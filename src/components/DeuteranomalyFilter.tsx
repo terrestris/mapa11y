@@ -39,9 +39,14 @@ const DeuteranomalyFilter: React.FC<DeuteranomalyFilterProps> = ({
       1, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 1, 0,
     ];
 
+    /*
+     * Green colors are attenuated, red colors are slightly enhanced, part of
+     * the blue component contains more red and additional green components in
+     * blue change the color perception so that blue tends more towards
+     * purple/violet. Transparency and brightness remain unaffected.
+     */
     const matrix100 = [
-      1.4366185, -0.6313967, 0.1947789, 0, 0, 0, 1, 0, 0, 0, -0.1842395,
-      0.1863093, 0.9979299, 0, 0, 0, 0, 0, 1, 0,
+      1.4, -0.6, 0.2, 0, 0, 0, 1, 0, 0, 0, -0.2, 0.2, 1, 0, 0, 0, 0, 0, 1, 0,
     ];
 
     const interpolatedMatrix = matrix0.map(

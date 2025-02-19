@@ -12,7 +12,6 @@ const MapComponent: React.FC = () => {
 
   useEffect(() => {
     if (mapRef.current) {
-      // Initialisiere die Karte
       const map = new Map({
         target: mapRef.current,
         layers: [
@@ -41,8 +40,8 @@ const MapComponent: React.FC = () => {
     <div
       ref={mapRef}
       style={{
-        width: '400px',
-        height: '400px',
+        width: '100%',
+        height: '100%',
       }}
     />
   );

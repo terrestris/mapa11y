@@ -38,9 +38,13 @@ const ProtanomalyFilter: React.FC<ProtanomalyFilterProps> = ({
       1, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 1, 0,
     ];
 
+    /*
+     * Red colors are attenuated, green colors are slightly enhanced, part of
+     * the blue component is reduced to appear less violet and to be more
+     * distinct from red/green. Transparency and brightness remain unaffected.
+     */
     const matrix100 = [
-      1, 0, 0, 0, 0, 0.4788968, 0.4769109, 0.0441916, 0, 0, 0.5972818,
-      -0.6886921, 1.0914096, 0, 0, 0, 0, 0, 1, 0,
+      1, 0, 0, 0, 0, 0.5, 0.5, 0, 0, 0, 0.6, -0.7, 1, 0, 0, 0, 0, 0, 1, 0,
     ];
 
     const interpolatedMatrix = matrix0.map(

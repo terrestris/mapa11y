@@ -5,9 +5,9 @@ import { useTranslation } from 'react-i18next';
 import './FilterMenu.css';
 import DeuteranomalyFilter from './DeuteranomalyFilter';
 import GrayscaleFilter from './GrayscaleFilter';
+import appIcon from './icon_black.svg';
 import ProtanomalyFilter from './ProtanomalyFilter';
 import TritanomalyFilter from './TritanomalyFilter';
-import BlueLightFilter from './BlueLightFilter';
 
 const FilterMenu: React.FC = () => {
   const { t } = useTranslation();
@@ -71,17 +71,13 @@ const FilterMenu: React.FC = () => {
               isActive={activeFilter === 'grayscale'}
               onActivate={() => activateFilter('grayscale')}
             />
-            <BlueLightFilter
-              isActive={activeFilter === 'bluelight'}
-              onActivate={() => activateFilter('grayscale')}
-            />
           </div>
         </div>
       ) : (
         <div className="filter-icon" onClick={toggleMenu}>
           <img
-            src="/favicon.svg"
-            alt="Open Filter Menu"
+            src={appIcon}
+            alt={t('filterMenu.openMenu')}
             aria-label={t('filterMenu.openMenu')}
             aria-description={t('filterMenu.openFilterMenu')}
           />
