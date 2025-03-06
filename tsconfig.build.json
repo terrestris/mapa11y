@@ -14,7 +14,8 @@
     "allowSyntheticDefaultImports": true,
     "esModuleInterop": true,
     "resolveJsonModule": true,
-    "allowJs": true
+    "allowJs": true,
+    "types": ["vitest/globals", "node"]
   },
   "include": ["src"]
 }
