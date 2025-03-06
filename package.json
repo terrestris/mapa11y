@@ -49,23 +49,27 @@
     "preview": "vite preview",
     "format": "prettier --write .",
     "typecheck": "tsc --noEmit",
-    "check": "npm run typecheck && npm run lint"
+    "check": "npm run typecheck && npm run lint",
+    "prepare": "husky",
+    "test": "echo \"No tests defined\" && exit 0"
   },
   "dependencies": {
-    "i18next": "24.2.2",
+    "i18next": ">=24.2.2",
     "i18next-browser-languagedetector": "8.0.4",
-    "react": "19.0.0",
-    "react-dom": "19.0.0",
-    "react-i18next": "15.4.1"
-  },
-  "peerDependencies": {
     "react": ">=19.0.0",
     "react-dom": ">=19.0.0",
-    "react-i18next": ">=15.4.1",
+    "react-i18next": ">=15.4.1"
+  },
+  "peerDependencies": {
     "i18next": ">=24.2.2",
-    "i18next-browser-languagedetector": "8.0.4"
+    "i18next-browser-languagedetector": "8.0.4",
+    "react": ">=19.0.0",
+    "react-dom": ">=19.0.0",
+    "react-i18next": ">=15.4.1"
   },
   "devDependencies": {
+    "@commitlint/cli": "19.7.1",
+    "@commitlint/config-conventional": "19.7.1",
     "@eslint/js": "9.21.0",
     "@stylistic/eslint-plugin": "4.2.0",
     "@terrestris/eslint-config-typescript": "9.0.0",
@@ -81,10 +85,11 @@
     "eslint-plugin-react-hooks": "5.2.0",
     "eslint-plugin-react-refresh": "0.4.19",
     "globals": "16.0.0",
+    "husky": "9.1.7",
+    "ol": "10.4.0",
     "prettier": "3.5.3",
     "typescript": "5.8.2",
     "typescript-eslint": "8.26.0",
-    "vite": "6.2.0",
-    "ol": "10.4.0"
+    "vite": "6.2.0"
   }
 }
