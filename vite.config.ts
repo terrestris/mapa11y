@@ -16,6 +16,7 @@ export default defineConfig({
         globals: {
           react: 'React',
           'react-dom': 'ReactDOM',
+          'react-i18next': 'ReactI18next',
         },
       },
     },
