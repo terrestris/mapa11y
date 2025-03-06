@@ -51,7 +51,8 @@
     "typecheck": "tsc --noEmit",
     "check": "npm run typecheck && npm run lint",
     "prepare": "husky",
-    "test": "echo \"No tests defined\" && exit 0"
+    "test": "echo \"No tests defined\" && exit 0",
+    "release": "semantic-release"
   },
   "dependencies": {
     "i18next": ">=24.2.2",
@@ -71,6 +72,12 @@
     "@commitlint/cli": "19.7.1",
     "@commitlint/config-conventional": "19.7.1",
     "@eslint/js": "9.21.0",
+    "@semantic-release/changelog": "6.0.3",
+    "@semantic-release/commit-analyzer": "13.0.1",
+    "@semantic-release/git": "10.0.1",
+    "@semantic-release/github": "11.0.1",
+    "@semantic-release/npm": "12.0.1",
+    "@semantic-release/release-notes-generator": "14.0.3",
     "@stylistic/eslint-plugin": "4.2.0",
     "@terrestris/eslint-config-typescript": "9.0.0",
     "@types/react": "19.0.10",
@@ -88,6 +95,7 @@
     "husky": "9.1.7",
     "ol": "10.4.0",
     "prettier": "3.5.3",
+    "semantic-release": "24.2.3",
     "typescript": "5.8.2",
     "typescript-eslint": "8.26.0",
     "vite": "6.2.0"
