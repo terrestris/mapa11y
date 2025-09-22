@@ -13,7 +13,7 @@ const Slider: React.FC<SliderProps> = ({
   onChange,
   ...passThroughProps
 }) => {
-  const { t } = useTranslation();
+  const { t } = useTranslation('mapa11y');
 
   return (
     <div
@@ -28,8 +28,9 @@ const Slider: React.FC<SliderProps> = ({
         onChange={e => onChange(Number(e.target.value))}
         {...passThroughProps}
       />
-      <p>
-        {t('filterMenu.intensity')}: {intensity}%
+      <p className="intensity-label">
+        <span className="label-text">{t('filterMenu.intensity')}:</span>
+        <span className="value">{intensity}%</span>
       </p>
     </div>
   );

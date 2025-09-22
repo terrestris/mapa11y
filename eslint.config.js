@@ -2,7 +2,6 @@ import prettierPlugin from 'eslint-plugin-prettier';
 import prettierConfig from 'eslint-config-prettier';
 import eslintTerrestris from '@terrestris/eslint-config-typescript';
 
-// Deine existierenden Importe bleiben bestehen
 import tsEslint from 'typescript-eslint';
 import eslint from '@eslint/js';
 import globals from 'globals';
@@ -40,6 +39,9 @@ export default tsEslint.config({
   rules: {
     ...eslintTerrestris.rules,
     ...reactHooksPlugin.configs.recommended.rules,
+    'prettier/prettier': 'warn',
+    indent: 'off',
+    '@stylistic/indent': 'off',
     'max-len': [
       'warn',
       {

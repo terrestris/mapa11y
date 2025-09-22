@@ -5,7 +5,7 @@ import { I18nextProvider } from 'react-i18next';
 
 import '@testing-library/jest-dom';
 
-import i18n from '../i18n';
+import i18n from '../test-utils/i18n';
 
 import FilterMenu from './FilterMenu';
 
@@ -81,10 +81,16 @@ describe('FilterMenu Component', () => {
     renderWithProviders(<FilterMenu />);
     fireEvent.click(screen.getByRole('img', { name: /Open Filter Menu/i }));
 
-    filters.push({
-      buttonName: /close/i,
-      sliderName: undefined,
-    });
+    filters.push(
+      {
+        buttonName: /close/i,
+        sliderName: undefined,
+      },
+      {
+        buttonName: /reset/i,
+        sliderName: undefined,
+      }
+    );
 
     const buttonElements = screen.getAllByRole('button');
 
@@ -110,6 +116,37 @@ describe('FilterMenu Component', () => {
       ) {
         throw new Error(`Unexpected button found: ${ariaLabel}`);
       }
+    });
+  });
+
+  test('reset button clears filter and intensities', () => {
+    renderWithProviders(<FilterMenu />);
+    fireEvent.click(screen.getByRole('img', { name: /Open Filter Menu/i }));
+
+    fireEvent.click(screen.getByRole('button', { name: /protanomaly/i }));
+    expect(document.body.style.filter).toContain('protanomaly');
+
+    localStorage.setItem(
+      'mapa11yFilterIntensities',
+      JSON.stringify({
+        protanomaly: 50,
+        deuteranomaly: 100,
+        tritanomaly: 100,
+        grayscale: 100,
+      })
+    );
+
+    fireEvent.click(screen.getByRole('button', { name: /reset/i }));
+
+    expect(document.body.style.filter).toBe('none');
+    expect(localStorage.getItem('mapa11yActiveFilter')).toBeNull();
+    expect(
+      JSON.parse(localStorage.getItem('mapa11yFilterIntensities')!)
+    ).toEqual({
+      protanomaly: 100,
+      deuteranomaly: 100,
+      tritanomaly: 100,
+      grayscale: 100,
     });
   });
 });
