@@ -1,3 +1,10 @@
+## [1.0.1](https://github.com/terrestris/mapa11y/compare/v1.0.0...v1.0.1) (2025-09-23)
+
+
+### Bug Fixes
+
+* fixes the package.json for deploy ([f4f100c](https://github.com/terrestris/mapa11y/commit/f4f100c54e81f5f92c57d4d815801b9072f22489))
+
 # 1.0.0 (2025-09-23)
 
 
