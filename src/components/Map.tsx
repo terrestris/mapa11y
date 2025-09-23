@@ -1,6 +1,7 @@
 import React, { useEffect, useRef } from 'react';
 
 import 'ol/ol.css';
+import { Attribution } from 'ol/control';
 import TileLayer from 'ol/layer/Tile';
 import Map from 'ol/Map';
 import { fromLonLat } from 'ol/proj';
@@ -23,6 +24,10 @@ const MapComponent: React.FC = () => {
                 TILED: true,
               },
               serverType: 'geoserver',
+              attributions: [
+                '© <a href="https://www.openstreetmap.org/copyright">OpenStreetMap contributors</a>',
+                'Tiles courtesy of <a href="https://www.terrestris.de/">terrestris</a>',
+              ],
             }),
           }),
         ],
@@ -30,6 +35,11 @@ const MapComponent: React.FC = () => {
           center: fromLonLat([7.0982, 50.7374]),
           zoom: 12,
         }),
+        controls: [
+          new Attribution({
+            collapsible: true,
+          }),
+        ],
       });
 
       return () => map.setTarget(undefined);

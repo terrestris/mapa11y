@@ -21,23 +21,22 @@ This plugin is still under constant development
 
 ## Installation
 
-To install the package in your project, use the following command:
+First, install the package and its peer dependencies in your project:
 
 ```bash
 npm install @terrestris/mapa11y
 ```
 
-Import the `FilterMenu` and add the component to your `App`.
+Then import and use the `FilterMenu` component in your application:
 
 ```typescript
 import { FilterMenu } from '@terrestris/mapa11y';
-
-import MapComponent from './Map';
+import '@terrestris/mapa11y/dist/mapa11y.css';
 
 const App = () => {
   return (
     <>
-      <MapComponent />
+      {/* Your other components */}
       <FilterMenu />
     </>
   );
@@ -46,31 +45,17 @@ const App = () => {
 export default App;
 ```
 
-To use the translation files, `i18n` must be imported from `mapa11y` (if not
-already present in the application) and the `App` must be wrapped in an
-`I18NextProvider`. The style of the `mapa11y` components can either be defined
-independently or used via an import:
+To add the mapa11y translations to an exisitng i18n instance use
 
 ```typescript
-import React from 'react';
-import ReactDOM from 'react-dom/client';
+import { addTranslations } from '@terrestris/mapa11y';
 
-import App from './App';
+// i18n initialisation
 
-import i18n from '@terrestris/mapa11y/dist/i18n';
-import { I18nextProvider } from 'react-i18next';
-
-import '@terrestris/mapa11y/dist/mapa11y.css';
-
-ReactDOM.createRoot(document.getElementById('root')!).render(
-  <React.StrictMode>
-    <I18nextProvider i18n={i18n}>
-      <App />
-    </I18nextProvider>
-  </React.StrictMode>
-);
-
+await addTranslations(i18n);
 ```
+
+Otherwise, the plugin uses its own i18n instance.
 
 The filter menu is then displayed in the application and can be applied to the
 content of the entire website.
