@@ -1,6 +1,6 @@
 {
   "name": "@terrestris/mapa11y",
-  "version": "0.0.1",
+  "version": "1.0.0",
   "description": "This plugin provides some filters for people with color vision deficiency in the context of accessibility",
   "keywords": [
     "accessibility",
