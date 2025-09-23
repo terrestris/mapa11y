@@ -20,7 +20,7 @@
   ],
   "repository": {
     "type": "git",
-    "url": "git@github.com:terrestris/mapa11y.git"
+    "url": "git+ssh://git@github.com/terrestris/mapa11y.git"
   },
   "author": {
     "name": "terrestris GmbH & Co. KG",
@@ -41,6 +41,9 @@
     "dist"
   ],
   "type": "module",
+  "publishConfig": {
+    "access": "public"
+  },
   "scripts": {
     "dev": "vite",
     "build:types": "tsc --project tsconfig.build.json",
